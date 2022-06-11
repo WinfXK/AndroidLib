@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidLib</string>
+    <string name="cancel">取消</string>
+    <string name="confim">确定</string>
+</resources>
