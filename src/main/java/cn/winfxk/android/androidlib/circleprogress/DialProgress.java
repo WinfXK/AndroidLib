@@ -1,7 +1,4 @@
-package com.littlejie.circleprogress;
-
-import com.littlejie.circleprogress.utils.Constant;
-import com.littlejie.circleprogress.utils.MiscUtil;
+package cn.winfxk.android.androidlib.circleprogress;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -21,7 +18,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import cn.winfxk.android.androidlib.R;
+import cn.winfxk.android.androidlib.circleprogress.utils.Constant;
+import cn.winfxk.android.androidlib.circleprogress.utils.MiscUtil;
+import cn.winfxk.android.androidlib.libR;
 
 /**
  * 带有刻度的圆形进度条 Created by littlejie on 2017/2/26.
@@ -93,30 +92,30 @@ public class DialProgress extends View {
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     private void initConfig(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DialProgress);
-        antiAlias = typedArray.getBoolean(cn.winfxk.android.androidlib.R.styleable.DialProgress_antiAlias, true);
-        mMaxValue = typedArray.getFloat(R.styleable.DialProgress_maxValue, Constant.DEFAULT_MAX_VALUE);
-        mValue = typedArray.getFloat(R.styleable.DialProgress_value, Constant.DEFAULT_VALUE);
-        mValueSize = typedArray.getDimension(R.styleable.DialProgress_valueSize, Constant.DEFAULT_VALUE_SIZE);
-        mValueColor = typedArray.getColor(R.styleable.DialProgress_valueColor, Color.BLACK);
-        mDialIntervalDegree = typedArray.getInt(R.styleable.DialProgress_dialIntervalDegree, 10);
-        int precision = typedArray.getInt(R.styleable.DialProgress_precision, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, libR.styleable.DialProgress);
+        antiAlias = typedArray.getBoolean(cn.winfxk.android.androidlib.libR.styleable.DialProgress_antiAlias, true);
+        mMaxValue = typedArray.getFloat(libR.styleable.DialProgress_maxValue, Constant.DEFAULT_MAX_VALUE);
+        mValue = typedArray.getFloat(libR.styleable.DialProgress_value, Constant.DEFAULT_VALUE);
+        mValueSize = typedArray.getDimension(libR.styleable.DialProgress_valueSize, Constant.DEFAULT_VALUE_SIZE);
+        mValueColor = typedArray.getColor(libR.styleable.DialProgress_valueColor, Color.BLACK);
+        mDialIntervalDegree = typedArray.getInt(libR.styleable.DialProgress_dialIntervalDegree, 10);
+        int precision = typedArray.getInt(libR.styleable.DialProgress_precision, 0);
         mPrecisionFormat = MiscUtil.getPrecisionFormat(precision);
-        mUnit = typedArray.getString(R.styleable.DialProgress_unit);
-        mUnitColor = typedArray.getColor(R.styleable.DialProgress_unitColor, Color.BLACK);
-        mUnitSize = typedArray.getDimension(R.styleable.DialProgress_unitSize, Constant.DEFAULT_UNIT_SIZE);
-        mHint = typedArray.getString(R.styleable.DialProgress_hint);
-        mHintColor = typedArray.getColor(R.styleable.DialProgress_hintColor, Color.BLACK);
-        mHintSize = typedArray.getDimension(R.styleable.DialProgress_hintSize, Constant.DEFAULT_HINT_SIZE);
-        mArcWidth = typedArray.getDimension(R.styleable.DialProgress_arcWidth, Constant.DEFAULT_ARC_WIDTH);
-        mStartAngle = typedArray.getFloat(R.styleable.DialProgress_startAngle, Constant.DEFAULT_START_ANGLE);
-        mSweepAngle = typedArray.getFloat(R.styleable.DialProgress_sweepAngle, Constant.DEFAULT_SWEEP_ANGLE);
-        mAnimTime = typedArray.getInt(R.styleable.DialProgress_animTime, Constant.DEFAULT_ANIM_TIME);
-        mBgArcColor = typedArray.getColor(R.styleable.DialProgress_bgArcColor, Color.GRAY);
-        mDialWidth = typedArray.getDimension(R.styleable.DialProgress_dialWidth, 2);
-        mDialColor = typedArray.getColor(R.styleable.DialProgress_dialColor, Color.WHITE);
-        mTextOffsetPercentInRadius = typedArray.getFloat(R.styleable.DialProgress_textOffsetPercentInRadius, 0.33f);
-        int gradientArcColors = typedArray.getResourceId(R.styleable.DialProgress_arcColors, 0);
+        mUnit = typedArray.getString(libR.styleable.DialProgress_unit);
+        mUnitColor = typedArray.getColor(libR.styleable.DialProgress_unitColor, Color.BLACK);
+        mUnitSize = typedArray.getDimension(libR.styleable.DialProgress_unitSize, Constant.DEFAULT_UNIT_SIZE);
+        mHint = typedArray.getString(libR.styleable.DialProgress_hint);
+        mHintColor = typedArray.getColor(libR.styleable.DialProgress_hintColor, Color.BLACK);
+        mHintSize = typedArray.getDimension(libR.styleable.DialProgress_hintSize, Constant.DEFAULT_HINT_SIZE);
+        mArcWidth = typedArray.getDimension(libR.styleable.DialProgress_arcWidth, Constant.DEFAULT_ARC_WIDTH);
+        mStartAngle = typedArray.getFloat(libR.styleable.DialProgress_startAngle, Constant.DEFAULT_START_ANGLE);
+        mSweepAngle = typedArray.getFloat(libR.styleable.DialProgress_sweepAngle, Constant.DEFAULT_SWEEP_ANGLE);
+        mAnimTime = typedArray.getInt(libR.styleable.DialProgress_animTime, Constant.DEFAULT_ANIM_TIME);
+        mBgArcColor = typedArray.getColor(libR.styleable.DialProgress_bgArcColor, Color.GRAY);
+        mDialWidth = typedArray.getDimension(libR.styleable.DialProgress_dialWidth, 2);
+        mDialColor = typedArray.getColor(libR.styleable.DialProgress_dialColor, Color.WHITE);
+        mTextOffsetPercentInRadius = typedArray.getFloat(libR.styleable.DialProgress_textOffsetPercentInRadius, 0.33f);
+        int gradientArcColors = typedArray.getResourceId(libR.styleable.DialProgress_arcColors, 0);
         if (gradientArcColors != 0) {
             try {
                 int[] gradientColors = getResources().getIntArray(gradientArcColors);

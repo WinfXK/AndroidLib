@@ -42,7 +42,7 @@ public class MyImageView extends androidx.appcompat.widget.AppCompatImageView {
             }
             if (onload != null)
                 onload.Download(msg.what, MyImageView.this, null);
-            setImageResource(R.drawable.wifi_sb);
+            setImageResource(libR.drawable.wifi_sb);
         }
     };
 
@@ -79,7 +79,7 @@ public class MyImageView extends androidx.appcompat.widget.AppCompatImageView {
     public void setImageURL(final String path) {
         scaleType = getScaleType();
         setScaleType(ScaleType.FIT_CENTER);
-        setImageResource(R.drawable.loading_icon);
+        setImageResource(libR.drawable.loading_icon);
         new Thread() {
             @Override
             public void run() {

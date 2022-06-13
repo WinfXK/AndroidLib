@@ -1,8 +1,5 @@
 package cn.winfxk.android.androidlib;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,6 +14,10 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Author: liuqiang Time: 2018-01-02 13:28 Description:
  */
@@ -39,19 +40,19 @@ public class MyListBuilder {
         defaultBottomBtnStyle = new SheetItemTextStyle();
         defaultBottomBtnStyle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         context.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        View view = LayoutInflater.from(mContext).inflate(R.layout.view_actionsheet, null);
+        View view = LayoutInflater.from(mContext).inflate(libR.layout.view_actionsheet, null);
         view.setMinimumWidth(dm.widthPixels);
-        scrollView = (ScrollView) view.findViewById(R.id.sLayout_content);
-        content = (LinearLayout) view.findViewById(R.id.lLayout_content);
-        tvTitle = (TextView) view.findViewById(R.id.txt_title);
-        tvCancel = (TextView) view.findViewById(R.id.txt_cancel);
+        scrollView = (ScrollView) view.findViewById(libR.id.sLayout_content);
+        content = (LinearLayout) view.findViewById(libR.id.lLayout_content);
+        tvTitle = (TextView) view.findViewById(libR.id.txt_title);
+        tvCancel = (TextView) view.findViewById(libR.id.txt_cancel);
         tvCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-        dialog = new Dialog(context, R.style.ActionSheetDialogStyle);
+        dialog = new Dialog(context, libR.style.ActionSheetDialogStyle);
         dialog.setContentView(view);
         Window dialogWindow = dialog.getWindow();
         dialogWindow.setGravity(Gravity.START | Gravity.BOTTOM);
@@ -129,20 +130,20 @@ public class MyListBuilder {
             textView.setGravity(Gravity.CENTER);
             if (size == 1) {
                 if (showTitle) {
-                    textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                    textView.setBackgroundResource(libR.drawable.actionsheet_bottom_selector);
                 } else
-                    textView.setBackgroundResource(R.drawable.actionsheet_single_selector);
+                    textView.setBackgroundResource(libR.drawable.actionsheet_single_selector);
             } else if (showTitle) {
                 if (i >= 1 && i < size) {
-                    textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                    textView.setBackgroundResource(libR.drawable.actionsheet_middle_selector);
                 } else
-                    textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                    textView.setBackgroundResource(libR.drawable.actionsheet_bottom_selector);
             } else if (i == 1) {
-                textView.setBackgroundResource(R.drawable.actionsheet_top_selector);
+                textView.setBackgroundResource(libR.drawable.actionsheet_top_selector);
             } else if (i < size) {
-                textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                textView.setBackgroundResource(libR.drawable.actionsheet_middle_selector);
             } else
-                textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                textView.setBackgroundResource(libR.drawable.actionsheet_bottom_selector);
             textView.setTextColor(sheetItem.textStyle.textColor);
             float scale = mContext.getResources().getDisplayMetrics().density;
             int height = (int) (45 * scale + 0.5f);

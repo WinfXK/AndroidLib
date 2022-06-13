@@ -1,4 +1,4 @@
-package com.littlejie.circleprogress.utils;
+package cn.winfxk.android.androidlib.circleprogress.utils;
 /**
  * Created by littlejie on 2017/2/26.
  */

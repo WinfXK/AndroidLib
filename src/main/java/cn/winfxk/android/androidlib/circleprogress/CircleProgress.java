@@ -1,6 +1,5 @@
-package com.littlejie.circleprogress;
-import com.littlejie.circleprogress.utils.Constant;
-import com.littlejie.circleprogress.utils.MiscUtil;
+package cn.winfxk.android.androidlib.circleprogress;
+
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,7 +18,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import cn.winfxk.android.androidlib.R;
+import cn.winfxk.android.androidlib.circleprogress.utils.Constant;
+import cn.winfxk.android.androidlib.circleprogress.utils.MiscUtil;
+import cn.winfxk.android.androidlib.libR;
 
 /**
  * 圆形进度条，类似 QQ 健康中运动步数的 UI 控件 Created by littlejie on 2017/2/21.
@@ -92,30 +93,30 @@ public class CircleProgress extends View {
 	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
 	private void initAttrs(AttributeSet attrs) {
-		TypedArray typedArray = mContext.obtainStyledAttributes(attrs, cn.winfxk.android.androidlib.R.styleable.CircleProgressBar);
-		antiAlias = typedArray.getBoolean(R.styleable.CircleProgressBar_antiAlias, Constant.ANTI_ALIAS);
-		mHint = typedArray.getString(R.styleable.CircleProgressBar_hint);
-		mHintColor = typedArray.getColor(R.styleable.CircleProgressBar_hintColor, Color.BLACK);
-		mHintSize = typedArray.getDimension(R.styleable.CircleProgressBar_hintSize, Constant.DEFAULT_HINT_SIZE);
-		mValue = typedArray.getFloat(R.styleable.CircleProgressBar_value, Constant.DEFAULT_VALUE);
-		mMaxValue = typedArray.getFloat(R.styleable.CircleProgressBar_maxValue, Constant.DEFAULT_MAX_VALUE);
-		mPrecision = typedArray.getInt(R.styleable.CircleProgressBar_precision, 0);
+		TypedArray typedArray = mContext.obtainStyledAttributes(attrs, cn.winfxk.android.androidlib.libR.styleable.CircleProgressBar);
+		antiAlias = typedArray.getBoolean(libR.styleable.CircleProgressBar_antiAlias, Constant.ANTI_ALIAS);
+		mHint = typedArray.getString(libR.styleable.CircleProgressBar_hint);
+		mHintColor = typedArray.getColor(libR.styleable.CircleProgressBar_hintColor, Color.BLACK);
+		mHintSize = typedArray.getDimension(libR.styleable.CircleProgressBar_hintSize, Constant.DEFAULT_HINT_SIZE);
+		mValue = typedArray.getFloat(libR.styleable.CircleProgressBar_value, Constant.DEFAULT_VALUE);
+		mMaxValue = typedArray.getFloat(libR.styleable.CircleProgressBar_maxValue, Constant.DEFAULT_MAX_VALUE);
+		mPrecision = typedArray.getInt(libR.styleable.CircleProgressBar_precision, 0);
 		mPrecisionFormat = MiscUtil.getPrecisionFormat(mPrecision);
-		mValueColor = typedArray.getColor(R.styleable.CircleProgressBar_valueColor, Color.BLACK);
-		mValueSize = typedArray.getDimension(R.styleable.CircleProgressBar_valueSize, Constant.DEFAULT_VALUE_SIZE);
-		mUnit = typedArray.getString(R.styleable.CircleProgressBar_unit);
-		mUnitColor = typedArray.getColor(R.styleable.CircleProgressBar_unitColor, Color.BLACK);
-		mUnitSize = typedArray.getDimension(R.styleable.CircleProgressBar_unitSize, Constant.DEFAULT_UNIT_SIZE);
-		mArcWidth = typedArray.getDimension(R.styleable.CircleProgressBar_arcWidth, Constant.DEFAULT_ARC_WIDTH);
-		mStartAngle = typedArray.getFloat(R.styleable.CircleProgressBar_startAngle, Constant.DEFAULT_START_ANGLE);
-		mSweepAngle = typedArray.getFloat(R.styleable.CircleProgressBar_sweepAngle, Constant.DEFAULT_SWEEP_ANGLE);
-		mBgArcColor = typedArray.getColor(R.styleable.CircleProgressBar_bgArcColor, Color.WHITE);
-		mBgArcWidth = typedArray.getDimension(R.styleable.CircleProgressBar_bgArcWidth, Constant.DEFAULT_ARC_WIDTH);
-		mTextOffsetPercentInRadius = typedArray.getFloat(R.styleable.CircleProgressBar_textOffsetPercentInRadius,
+		mValueColor = typedArray.getColor(libR.styleable.CircleProgressBar_valueColor, Color.BLACK);
+		mValueSize = typedArray.getDimension(libR.styleable.CircleProgressBar_valueSize, Constant.DEFAULT_VALUE_SIZE);
+		mUnit = typedArray.getString(libR.styleable.CircleProgressBar_unit);
+		mUnitColor = typedArray.getColor(libR.styleable.CircleProgressBar_unitColor, Color.BLACK);
+		mUnitSize = typedArray.getDimension(libR.styleable.CircleProgressBar_unitSize, Constant.DEFAULT_UNIT_SIZE);
+		mArcWidth = typedArray.getDimension(libR.styleable.CircleProgressBar_arcWidth, Constant.DEFAULT_ARC_WIDTH);
+		mStartAngle = typedArray.getFloat(libR.styleable.CircleProgressBar_startAngle, Constant.DEFAULT_START_ANGLE);
+		mSweepAngle = typedArray.getFloat(libR.styleable.CircleProgressBar_sweepAngle, Constant.DEFAULT_SWEEP_ANGLE);
+		mBgArcColor = typedArray.getColor(libR.styleable.CircleProgressBar_bgArcColor, Color.WHITE);
+		mBgArcWidth = typedArray.getDimension(libR.styleable.CircleProgressBar_bgArcWidth, Constant.DEFAULT_ARC_WIDTH);
+		mTextOffsetPercentInRadius = typedArray.getFloat(libR.styleable.CircleProgressBar_textOffsetPercentInRadius,
 				0.33f);
-		// mPercent = typedArray.getFloat(R.styleable.CircleProgressBar_percent, 0);
-		mAnimTime = typedArray.getInt(R.styleable.CircleProgressBar_animTime, Constant.DEFAULT_ANIM_TIME);
-		int gradientArcColors = typedArray.getResourceId(R.styleable.CircleProgressBar_arcColors, 0);
+		// mPercent = typedArray.getFloat(libR.styleable.CircleProgressBar_percent, 0);
+		mAnimTime = typedArray.getInt(libR.styleable.CircleProgressBar_animTime, Constant.DEFAULT_ANIM_TIME);
+		int gradientArcColors = typedArray.getResourceId(libR.styleable.CircleProgressBar_arcColors, 0);
 		if (gradientArcColors != 0) {
 			try {
 				int[] gradientColors = getResources().getIntArray(gradientArcColors);

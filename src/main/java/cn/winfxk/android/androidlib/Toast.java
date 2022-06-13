@@ -26,15 +26,15 @@ public class Toast {
     private ImageView imageView, imageView1;
     public static final int LENGTH_SHORT = 0;
     public static final int LENGTH_LONG = 1;
-    public static final int[] Images = {R.drawable.toast_icon1, R.drawable.toast_icon2, R.drawable.toast_icon3, R.drawable.toast_icon4};
+    public static final int[] Images = {libR.drawable.toast_icon1, libR.drawable.toast_icon2, libR.drawable.toast_icon3, libR.drawable.toast_icon4};
 
     public Toast(Context context) {
         this.activity = context;
         LayoutInflater inflate = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflate.inflate(R.layout.toast, null);
-        textView = (TextView) view.findViewById(R.id.textView1);
-        imageView = (ImageView) view.findViewById(R.id.imageView1);
-        imageView1 = (ImageView) view.findViewById(R.id.imageView2);
+        view = inflate.inflate(libR.layout.toast, null);
+        textView = (TextView) view.findViewById(libR.id.textView1);
+        imageView = (ImageView) view.findViewById(libR.id.imageView1);
+        imageView1 = (ImageView) view.findViewById(libR.id.imageView2);
     }
 
     /**

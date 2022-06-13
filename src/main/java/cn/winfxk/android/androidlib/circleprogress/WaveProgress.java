@@ -1,7 +1,4 @@
-package com.littlejie.circleprogress;
-
-import com.littlejie.circleprogress.utils.Constant;
-import com.littlejie.circleprogress.utils.MiscUtil;
+package cn.winfxk.android.androidlib.circleprogress;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -22,7 +19,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import cn.winfxk.android.androidlib.R;
+import cn.winfxk.android.androidlib.circleprogress.utils.Constant;
+import cn.winfxk.android.androidlib.circleprogress.utils.MiscUtil;
+import cn.winfxk.android.androidlib.libR;
 
 /**
  * 水波进度条 Created by littlejie on 2017/2/26.
@@ -112,35 +111,35 @@ public class WaveProgress extends View {
     @SuppressWarnings("deprecation")
     @SuppressLint("NewApi")
     private void initAttrs(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, cn.winfxk.android.androidlib.R.styleable.WaveProgress);
-        antiAlias = typedArray.getBoolean(R.styleable.WaveProgress_antiAlias, true);
-        mDarkWaveAnimTime = typedArray.getInt(R.styleable.WaveProgress_darkWaveAnimTime, Constant.DEFAULT_ANIM_TIME);
-        mLightWaveAnimTime = typedArray.getInt(R.styleable.WaveProgress_lightWaveAnimTime, Constant.DEFAULT_ANIM_TIME);
-        mMaxValue = typedArray.getFloat(R.styleable.WaveProgress_maxValue, Constant.DEFAULT_MAX_VALUE);
-        mValue = typedArray.getFloat(R.styleable.WaveProgress_value, Constant.DEFAULT_VALUE);
-        mValueSize = typedArray.getDimension(R.styleable.WaveProgress_valueSize, Constant.DEFAULT_VALUE_SIZE);
-        mValueColor = typedArray.getColor(R.styleable.WaveProgress_valueColor, Color.BLACK);
-        mHint = typedArray.getString(R.styleable.WaveProgress_hint);
-        mHintColor = typedArray.getColor(R.styleable.WaveProgress_hintColor, Color.BLACK);
-        mHintSize = typedArray.getDimension(R.styleable.WaveProgress_hintSize, Constant.DEFAULT_HINT_SIZE);
-        mCircleWidth = typedArray.getDimension(R.styleable.WaveProgress_circleWidth, Constant.DEFAULT_ARC_WIDTH);
-        mCircleColor = typedArray.getColor(R.styleable.WaveProgress_circleColor, Color.GREEN);
-        mBgCircleColor = typedArray.getColor(R.styleable.WaveProgress_bgCircleColor, Color.WHITE);
-        mWaveHeight = typedArray.getDimension(R.styleable.WaveProgress_waveHeight, Constant.DEFAULT_WAVE_HEIGHT);
-        mWaveNum = typedArray.getInt(R.styleable.WaveProgress_waveNum, 1);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, cn.winfxk.android.androidlib.libR.styleable.WaveProgress);
+        antiAlias = typedArray.getBoolean(libR.styleable.WaveProgress_antiAlias, true);
+        mDarkWaveAnimTime = typedArray.getInt(libR.styleable.WaveProgress_darkWaveAnimTime, Constant.DEFAULT_ANIM_TIME);
+        mLightWaveAnimTime = typedArray.getInt(libR.styleable.WaveProgress_lightWaveAnimTime, Constant.DEFAULT_ANIM_TIME);
+        mMaxValue = typedArray.getFloat(libR.styleable.WaveProgress_maxValue, Constant.DEFAULT_MAX_VALUE);
+        mValue = typedArray.getFloat(libR.styleable.WaveProgress_value, Constant.DEFAULT_VALUE);
+        mValueSize = typedArray.getDimension(libR.styleable.WaveProgress_valueSize, Constant.DEFAULT_VALUE_SIZE);
+        mValueColor = typedArray.getColor(libR.styleable.WaveProgress_valueColor, Color.BLACK);
+        mHint = typedArray.getString(libR.styleable.WaveProgress_hint);
+        mHintColor = typedArray.getColor(libR.styleable.WaveProgress_hintColor, Color.BLACK);
+        mHintSize = typedArray.getDimension(libR.styleable.WaveProgress_hintSize, Constant.DEFAULT_HINT_SIZE);
+        mCircleWidth = typedArray.getDimension(libR.styleable.WaveProgress_circleWidth, Constant.DEFAULT_ARC_WIDTH);
+        mCircleColor = typedArray.getColor(libR.styleable.WaveProgress_circleColor, Color.GREEN);
+        mBgCircleColor = typedArray.getColor(libR.styleable.WaveProgress_bgCircleColor, Color.WHITE);
+        mWaveHeight = typedArray.getDimension(libR.styleable.WaveProgress_waveHeight, Constant.DEFAULT_WAVE_HEIGHT);
+        mWaveNum = typedArray.getInt(libR.styleable.WaveProgress_waveNum, 1);
         if (Build.VERSION.SDK_INT >= 23) {
-            mDarkWaveColor = typedArray.getColor(R.styleable.WaveProgress_darkWaveColor,
+            mDarkWaveColor = typedArray.getColor(libR.styleable.WaveProgress_darkWaveColor,
                     getResources().getColor(android.R.color.holo_blue_dark, context.getTheme()));
-            mLightWaveColor = typedArray.getColor(R.styleable.WaveProgress_lightWaveColor,
+            mLightWaveColor = typedArray.getColor(libR.styleable.WaveProgress_lightWaveColor,
                     getResources().getColor(android.R.color.holo_green_light, context.getTheme()));
         } else {
-            mDarkWaveColor = typedArray.getColor(R.styleable.WaveProgress_darkWaveColor,
+            mDarkWaveColor = typedArray.getColor(libR.styleable.WaveProgress_darkWaveColor,
                     getResources().getColor(android.R.color.holo_blue_dark));
-            mLightWaveColor = typedArray.getColor(R.styleable.WaveProgress_lightWaveColor,
+            mLightWaveColor = typedArray.getColor(libR.styleable.WaveProgress_lightWaveColor,
                     getResources().getColor(android.R.color.holo_green_light));
         }
-        isR2L = typedArray.getInt(R.styleable.WaveProgress_lightWaveDirect, R2L) == R2L;
-        lockWave = typedArray.getBoolean(R.styleable.WaveProgress_lockWave, false);
+        isR2L = typedArray.getInt(libR.styleable.WaveProgress_lightWaveDirect, R2L) == R2L;
+        lockWave = typedArray.getBoolean(libR.styleable.WaveProgress_lockWave, false);
         typedArray.recycle();
     }
 

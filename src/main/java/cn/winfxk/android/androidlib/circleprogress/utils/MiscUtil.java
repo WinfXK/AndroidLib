@@ -1,4 +1,4 @@
-package com.littlejie.circleprogress.utils;
+package cn.winfxk.android.androidlib.circleprogress.utils;
 
 import android.content.Context;
 import android.graphics.Paint;

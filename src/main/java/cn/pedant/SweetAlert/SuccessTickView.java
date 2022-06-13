@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import cn.winfxk.android.androidlib.R;
+import cn.winfxk.android.androidlib.libR;
 
 @SuppressLint("NewApi")
 @SuppressWarnings("deprecation")
@@ -40,7 +40,7 @@ public class SuccessTickView extends View {
 
 	private void init() {
 		mPaint = new Paint();
-		mPaint.setColor(getResources().getColor(cn.winfxk.android.androidlib.R.color.success_stroke_color, getContext().getTheme()));
+		mPaint.setColor(getResources().getColor(libR.color.success_stroke_color, getContext().getTheme()));
 		mLeftRectWidth = CONST_LEFT_RECT_W;
 		mRightRectWidth = CONST_RIGHT_RECT_W;
 		mLeftRectGrowMode = false;

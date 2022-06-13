@@ -8,7 +8,8 @@ import android.util.TypedValue;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import cn.winfxk.android.androidlib.R;
+import cn.winfxk.android.androidlib.libR;
+
 
 public class Rotate3dAnimation extends Animation {
     private int mPivotXType = ABSOLUTE;
@@ -59,14 +60,14 @@ public class Rotate3dAnimation extends Animation {
 
     public Rotate3dAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray a = context.obtainStyledAttributes(attrs, cn.winfxk.android.androidlib.R.styleable.Rotate3dAnimation);
-        mFromDegrees = a.getFloat(R.styleable.Rotate3dAnimation_fromDeg, 0.0f);
-        mToDegrees = a.getFloat(R.styleable.Rotate3dAnimation_toDeg, 0.0f);
-        mRollType = a.getInt(R.styleable.Rotate3dAnimation_rollType, ROLL_BY_X);
-        Description d = parseValue(a.peekValue(R.styleable.Rotate3dAnimation_pivotX));
+        TypedArray a = context.obtainStyledAttributes(attrs, libR.styleable.Rotate3dAnimation);
+        mFromDegrees = a.getFloat(libR.styleable.Rotate3dAnimation_fromDeg, 0.0f);
+        mToDegrees = a.getFloat(libR.styleable.Rotate3dAnimation_toDeg, 0.0f);
+        mRollType = a.getInt(libR.styleable.Rotate3dAnimation_rollType, ROLL_BY_X);
+        Description d = parseValue(a.peekValue(libR.styleable.Rotate3dAnimation_pivotX));
         mPivotXType = d.type;
         mPivotXValue = d.value;
-        d = parseValue(a.peekValue(R.styleable.Rotate3dAnimation_pivotY));
+        d = parseValue(a.peekValue(libR.styleable.Rotate3dAnimation_pivotY));
         mPivotYType = d.type;
         mPivotYValue = d.value;
         a.recycle();

@@ -1,6 +1,5 @@
 package cn.winfxk.android.androidlib;
 
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
